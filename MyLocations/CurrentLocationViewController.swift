@@ -66,6 +66,7 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
         
         location = newLocation
         updateLabels()
+        lastLocationError = nil
     }
     
     // MARK: - Helper Methods
