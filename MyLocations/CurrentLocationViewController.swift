@@ -12,6 +12,8 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
     
     let locationManager = CLLocationManager()
     var location: CLLocation?
+    var updatingLocation = false
+    var lastLocationError: Error?
 
     override func viewDidLoad() {
         super.viewDidLoad()
