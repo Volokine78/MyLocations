@@ -97,6 +97,14 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
             
         }
     }
+    
+    func stopLocationManager() {
+        if updatingLocation {
+            locationManager.stopUpdatingLocation()
+            locationManager.delegate = nil
+            updatingLocation = false
+        }
+    }
 }
 
 
