@@ -49,6 +49,13 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
         didFailWithError error: Error
     ) {
         print("didFailWithError \(error.localizedDescription)")
+        
+        if (error as NSError).code == CLError.locationUnknown.rawValue {
+            return
+        }
+        lastLocationError = error
+        stopLocationManager()
+        updateLabels()
     }
     
     func locationManager(
