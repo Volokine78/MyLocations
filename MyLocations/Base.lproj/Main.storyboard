@@ -29,7 +29,7 @@
                                     <action selector="getLocation" destination="BYZ-38-t0r" eventType="touchUpInside" id="85z-4C-5c7"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Address goes here)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0HV-Ru-yGr">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Address goes here)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0HV-Ru-yGr" userLabel="Address Label">
                                 <rect key="frame" x="16" y="151" width="343" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -95,7 +95,7 @@
                     <tabBarItem key="tabBarItem" title="Tag" id="GKP-pA-2BO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="addresLabel" destination="0HV-Ru-yGr" id="nGx-UH-4lt"/>
+                        <outlet property="addressLabel" destination="0HV-Ru-yGr" id="R5E-B7-K7d"/>
                         <outlet property="getButton" destination="xlH-1s-RHE" id="u2z-4C-TOt"/>
                         <outlet property="latitudeLabel" destination="tGL-yU-j0U" id="DnG-Yb-XMt"/>
                         <outlet property="longtitudeLabel" destination="1Qc-5w-6Jf" id="ulo-dc-M5b"/>

@@ -27,7 +27,7 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
     @IBOutlet var messageLabel: UILabel!
     @IBOutlet var latitudeLabel: UILabel!
     @IBOutlet var longtitudeLabel: UILabel!
-    @IBOutlet var addresLabel: UILabel!
+    @IBOutlet var addressLabel: UILabel!
     @IBOutlet var tagButton: UIButton!
     @IBOutlet var getButton: UIButton!
     
