@@ -131,10 +131,40 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
             longtitudeLabel.text = String(format: "%.8f", location.coordinate.longitude)
             tagButton.isHidden = false
             messageLabel.text = " "
+            
+            func string(from placemark: CLPlacemark) -> String {
+                var line1 = ""
+                if let tmp = placemark.subThoroughfare {    // House Number
+                    line1 += tmp + " "
+                }
+                if let tmp = placemark.thoroughfare {
+                    line1 += tmp
+                }
+                
+                var line2 = ""
+                if let tmp = placemark.locality {
+                    line2 += tmp + " "
+                }
+                if let tmp = placemark.administrativeArea {
+                    line2 += tmp
+                }
+                return line1 + "\n" + line2
+            }
+            
+            if let placemark = placemark {
+                addressLabel.text = string(from: placemark)
+            } else if performingReverseGeocoding {
+                addressLabel.text = "Searching for Address..."
+            } else if lastLocationError != nil {
+                addressLabel.text = "Error Finding Address"
+            } else {
+                addressLabel.text = "No Address Found"
+            }
+            
         } else {
             latitudeLabel.text = ""
             longtitudeLabel.text = ""
-            addresLabel.text = ""
+            addressLabel.text = ""
             tagButton.isHidden = true
             
             let statusMessage: String
