@@ -192,11 +192,22 @@
                             <outlet property="delegate" destination="CZG-gz-koR" id="Sr4-rf-fb1"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Tag Location" id="Qxt-e7-A95" userLabel="Navigation Item"/>
+                    <navigationItem key="navigationItem" title="Tag Location" id="Qxt-e7-A95" userLabel="Navigation Item">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="N3E-0W-mkX">
+                            <connections>
+                                <action selector="cancel" destination="CZG-gz-koR" id="Zhh-R3-ObT"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="HOi-M9-uzy">
+                            <connections>
+                                <action selector="done" destination="CZG-gz-koR" id="M8p-kR-E8T"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fiw-6T-SMf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2654" y="93"/>
+            <point key="canvasLocation" x="2670" y="92"/>
         </scene>
     </scenes>
     <resources>
