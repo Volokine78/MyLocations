@@ -360,12 +360,12 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="addressLabel" destination="tmM-C2-Go1" id="yxw-R7-iLA"/>
-                        <outlet property="categoryLabel" destination="Kyq-2g-6M3" id="3Oa-Sp-yCd"/>
-                        <outlet property="dateLabel" destination="qeb-Ze-ceh" id="tQ9-DD-Aih"/>
-                        <outlet property="descriptionTextView" destination="qWV-s7-Wm8" id="JrM-bZ-AX5"/>
-                        <outlet property="latitudeLabel" destination="6kA-gq-tby" id="tOl-ho-eRQ"/>
-                        <outlet property="longitudeLabel" destination="ige-8C-lJT" id="Lqh-ai-Ndq"/>
+                        <outlet property="addressLabel" destination="Nlw-bY-MUr" id="oUZ-dq-7jh"/>
+                        <outlet property="categoryLabel" destination="veL-GS-2tD" id="v93-eY-W44"/>
+                        <outlet property="dateLabel" destination="h0T-v3-Wf6" id="f3N-1g-Maj"/>
+                        <outlet property="descriptionTextView" destination="qWV-s7-Wm8" id="PJ4-qF-bAa"/>
+                        <outlet property="latitudeLabel" destination="LbC-hD-vjf" id="p9x-Yu-972"/>
+                        <outlet property="longitudeLabel" destination="XMN-QU-OEA" id="4mB-jK-YbC"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fiw-6T-SMf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
