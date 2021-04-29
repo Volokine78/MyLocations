@@ -75,4 +75,9 @@ class hudView: UIView {
                 }, completion: nil)
         }
     }
+    
+    func hide() {
+        superview?.isUserInteractionEnabled = true
+        removeFromSuperview()
+    }
 }
