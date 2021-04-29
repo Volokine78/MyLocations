@@ -127,8 +127,7 @@ class LocationDetailsViewController: UITableViewController {
         let hudView = hudView.hud(inView: mainView, animated: true)
         hudView.text = "Tagged"
         
-        let delayInSeconds = 0.6
-        DispatchQueue.main.asyncAfter(deadline: .now() + delayInSeconds) {
+        afterDelay(0.6) {
             hudView.hide()
             self.navigationController?.popViewController(animated: true)
         }
