@@ -129,6 +129,7 @@ class LocationDetailsViewController: UITableViewController {
         
         let delayInSeconds = 0.6
         DispatchQueue.main.asyncAfter(deadline: .now() + delayInSeconds) {
+            hudView.hide()
             self.navigationController?.popViewController(animated: true)
         }
     }
