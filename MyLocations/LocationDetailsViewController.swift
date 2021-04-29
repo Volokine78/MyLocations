@@ -126,6 +126,11 @@ class LocationDetailsViewController: UITableViewController {
         guard let mainView = navigationController?.parent?.view else { return }
         let hudView = hudView.hud(inView: mainView, animated: true)
         hudView.text = "Tagged"
+        
+        let delayInSeconds = 0.6
+        DispatchQueue.main.asyncAfter(deadline: .now() + delayInSeconds) {
+            self.navigationController?.popViewController(animated: true)
+        }
     }
     
     @IBAction func cancel() {
