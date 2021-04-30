@@ -23,6 +23,13 @@ class LocationDetailsViewController: UITableViewController {
     var placemark: CLPlacemark?
     var categoryName = "No Category"
     
+    @IBOutlet var descriptionTextView: UITextView!
+    @IBOutlet var categoryLabel: UILabel!
+    @IBOutlet var latitudeLabel: UILabel!
+    @IBOutlet var longitudeLabel: UILabel!
+    @IBOutlet var addressLabel: UILabel!
+    @IBOutlet var dateLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -46,13 +53,6 @@ class LocationDetailsViewController: UITableViewController {
         gestureRecognizer.cancelsTouchesInView = false
         tableView.addGestureRecognizer(gestureRecognizer)
     }
-    
-    @IBOutlet var descriptionTextView: UITextView!
-    @IBOutlet var categoryLabel: UILabel!
-    @IBOutlet var latitudeLabel: UILabel!
-    @IBOutlet var longitudeLabel: UILabel!
-    @IBOutlet var addressLabel: UILabel!
-    @IBOutlet var dateLabel: UILabel!
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
