@@ -8,11 +8,11 @@
 import Foundation
 import UIKit
 
-class hudView: UIView {
+class HudView: UIView {
     var text = ""
     
-    class func hud(inView view: UIView, animated: Bool) -> hudView {
-        let hudView = hudView(frame: view.bounds)
+    class func hud(inView view: UIView, animated: Bool) -> HudView {
+        let hudView = HudView(frame: view.bounds)
         hudView.isOpaque = false
         
         view.addSubview(hudView)
@@ -76,8 +76,17 @@ class hudView: UIView {
         }
     }
     
-    func hide() {
-        superview?.isUserInteractionEnabled = true
-        removeFromSuperview()
+    func hide(_ completion: @escaping () -> Void) {
+        UIView.animate(
+            withDuration: 0.3,
+            animations: {
+                self.alpha = 0
+                self.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
+            },
+            completion: {_ in
+                self.superview?.isUserInteractionEnabled = true
+                self.removeFromSuperview()
+                completion()
+            })
     }
 }
