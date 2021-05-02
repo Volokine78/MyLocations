@@ -99,12 +99,12 @@
 		B9943F2A26231B4900218127 /* MyLocations */ = {
 			isa = PBXGroup;
 			children = (
-				B9943F2B26231B4900218127 /* AppDelegate.swift */,
-				B9943F2D26231B4900218127 /* SceneDelegate.swift */,
 				B91B37CB263E291D00E6E114 /* Location View Controllers */,
 				B91B37CC263E293900E6E114 /* HUD */,
 				B91B37C9263E289800E6E114 /* Data Model */,
 				B9943F3126231B4900218127 /* Main.storyboard */,
+				B9943F2B26231B4900218127 /* AppDelegate.swift */,
+				B9943F2D26231B4900218127 /* SceneDelegate.swift */,
 				B9943F3726231B4A00218127 /* Assets.xcassets */,
 				B9943F3926231B4A00218127 /* LaunchScreen.storyboard */,
 				B9943F3C26231B4A00218127 /* Info.plist */,
