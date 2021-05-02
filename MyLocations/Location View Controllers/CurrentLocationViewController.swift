@@ -73,6 +73,7 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
             let controller = segue.destination as! LocationDetailsViewController
             controller.coordinate = location!.coordinate
             controller.placemark = placemark
+            controller.managedObjectContext = managedObjectContext
         }
     }
     
