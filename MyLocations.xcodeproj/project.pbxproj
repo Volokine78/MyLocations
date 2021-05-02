@@ -61,23 +61,14 @@
 			path = "Data Model";
 			sourceTree = "<group>";
 		};
-		B91B37CB263E291D00E6E114 /* Location View Controllers */ = {
+		B91B37CB263E291D00E6E114 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				B9943F2F26231B4900218127 /* CurrentLocationViewController.swift */,
 				B90C0A512638A03E00D4A93A /* LocationDetailsViewController.swift */,
 				B98460842639FA6900BE0BFF /* CategoryPickerViewController.swift */,
 			);
-			path = "Location View Controllers";
-			sourceTree = "<group>";
-		};
-		B91B37CC263E293900E6E114 /* HUD */ = {
-			isa = PBXGroup;
-			children = (
-				B9846086263A215300BE0BFF /* HudView.swift */,
-				B9846088263A42E300BE0BFF /* Functions.swift */,
-			);
-			path = HUD;
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 		B9943F1F26231B4900218127 = {
@@ -99,10 +90,11 @@
 		B9943F2A26231B4900218127 /* MyLocations */ = {
 			isa = PBXGroup;
 			children = (
-				B91B37CB263E291D00E6E114 /* Location View Controllers */,
-				B91B37CC263E293900E6E114 /* HUD */,
+				B91B37CB263E291D00E6E114 /* View Controllers */,
 				B91B37C9263E289800E6E114 /* Data Model */,
 				B9943F3126231B4900218127 /* Main.storyboard */,
+				B9846086263A215300BE0BFF /* HudView.swift */,
+				B9846088263A42E300BE0BFF /* Functions.swift */,
 				B9943F2B26231B4900218127 /* AppDelegate.swift */,
 				B9943F2D26231B4900218127 /* SceneDelegate.swift */,
 				B9943F3726231B4A00218127 /* Assets.xcassets */,
