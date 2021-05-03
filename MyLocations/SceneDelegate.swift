@@ -15,7 +15,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
 
     // MARK: - Core Data stack
-
     lazy var persistentContainer: NSPersistentContainer = {
         /*
          The persistent container for the application. This implementation
@@ -46,7 +45,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     lazy var managedObjectContext = persistentContainer.viewContext
     
     // MARK: - Core Data Saving support
-
     func saveContext () {
         let context = persistentContainer.viewContext
         if context.hasChanges {
@@ -61,6 +59,43 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }
     }
     
+    // MARK: - Helper Methods
+    func listenForFatalCoreDataNotifications() {
+        NotificationCenter.default.addObserver(
+            forName: dataSaveFailedNotification,
+            object: nil,
+            queue: OperationQueue.main
+        ) { _ in
+            let message = """
+                There was a fatal error in the app and it cannot continue.
+                
+                Press OK to terminate the app. Sorry for the inconvenience.
+                """
+            
+            let alert = UIAlertController(
+                title: "Internal Error",
+                message: message,
+                preferredStyle: .alert)
+            
+            let action = UIAlertAction(
+                title: "OK",
+                style: .default) { _ in
+                let exception = NSException(
+                    name: NSExceptionName.internalInconsistencyException,
+                    reason: "Fatal Core Data error",
+                    userInfo: nil)
+                exception.raise()
+            }
+            alert.addAction(action)
+            
+            let tabController = self.window!.rootViewController!
+            tabController.present(
+                    alert,
+                    animated: true,
+                    completion: nil)
+        }
+    }
+    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         
         let tabController = window!.rootViewController as! UITabBarController
@@ -70,6 +105,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let controller = navController.viewControllers.first as! CurrentLocationViewController
             controller.managedObjectContext = managedObjectContext
         }
+        
+        listenForFatalCoreDataNotifications()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
