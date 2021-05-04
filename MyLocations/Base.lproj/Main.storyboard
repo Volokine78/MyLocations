@@ -385,12 +385,36 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="h08-Yr-YE0">
-                                <rect key="frame" x="0.0" y="24.5" width="375" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LocationCell" rowHeight="65" id="h08-Yr-YE0">
+                                <rect key="frame" x="0.0" y="24.5" width="375" height="65"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="h08-Yr-YE0" id="PRN-dU-hKz">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ac6-Fx-mEu">
+                                            <rect key="frame" x="16" y="11" width="95" height="21"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ioa-Z1-bWa" userLabel="Address">
+                                            <rect key="frame" x="16" y="40" width="53" height="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="ac6-Fx-mEu" secondAttribute="trailing" id="8zn-fL-wbf"/>
+                                        <constraint firstAttribute="bottom" secondItem="ioa-Z1-bWa" secondAttribute="bottom" constant="8" id="9b1-eM-zbE"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ioa-Z1-bWa" secondAttribute="trailing" symbolic="YES" id="Cby-dK-Gwx"/>
+                                        <constraint firstItem="ioa-Z1-bWa" firstAttribute="top" secondItem="ac6-Fx-mEu" secondAttribute="bottom" constant="8" symbolic="YES" id="GZP-S2-s1f"/>
+                                        <constraint firstItem="ac6-Fx-mEu" firstAttribute="leading" secondItem="PRN-dU-hKz" secondAttribute="leadingMargin" id="S0c-9d-Ov5"/>
+                                        <constraint firstItem="ioa-Z1-bWa" firstAttribute="leading" secondItem="PRN-dU-hKz" secondAttribute="leading" constant="16" id="WlV-mQ-lEo"/>
+                                        <constraint firstItem="ioa-Z1-bWa" firstAttribute="top" secondItem="ac6-Fx-mEu" secondAttribute="bottom" constant="8" symbolic="YES" id="hHQ-nP-l8c"/>
+                                        <constraint firstItem="ac6-Fx-mEu" firstAttribute="top" secondItem="PRN-dU-hKz" secondAttribute="topMargin" id="lhG-Gq-CFZ"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
