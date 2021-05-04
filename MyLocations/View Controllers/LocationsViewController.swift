@@ -12,6 +12,24 @@ import CoreLocation
 
 class LocationsViewController: UITableViewController {
     var managedObjectContext: NSManagedObjectContext!
+    var locations = [Location]()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let fetchRequest = NSFetchRequest<Location>()
+        let entity = Location.entity()
+        fetchRequest.entity = entity
+        
+        let sortDescriptor = NSSortDescriptor(key: "date", ascending: true)
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        
+        do {
+            locations = try managedObjectContext.fetch(fetchRequest)
+        } catch {
+            fatalCoreDataError(error)
+        }
+    }
     
     // MARK: - Table View Delegates
     override func tableView(
