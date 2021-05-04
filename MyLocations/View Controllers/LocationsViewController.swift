@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 import CoreLocation
 
-class LocationViewController: UITableViewController {
+class LocationsViewController: UITableViewController {
     var managedObjectContext: NSManagedObjectContext!
     
     // MARK: - Table View Delegates
