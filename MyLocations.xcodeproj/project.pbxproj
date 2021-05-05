@@ -58,6 +58,7 @@
 		B91B37C9263E289800E6E114 /* Data Model */ = {
 			isa = PBXGroup;
 			children = (
+				B983D76F26421D9B00585D21 /* LocationCell.swift */,
 				B91B37C5263E245400E6E114 /* Location+CoreDataClass.swift */,
 				B91B37C6263E245400E6E114 /* Location+CoreDataProperties.swift */,
 				B9943F3426231B4900218127 /* MyLocations.xcdatamodeld */,
@@ -95,7 +96,6 @@
 		B9943F2A26231B4900218127 /* MyLocations */ = {
 			isa = PBXGroup;
 			children = (
-				B983D76F26421D9B00585D21 /* LocationCell.swift */,
 				B91B37CB263E291D00E6E114 /* View Controllers */,
 				B91B37C9263E289800E6E114 /* Data Model */,
 				B9846086263A215300BE0BFF /* HudView.swift */,
