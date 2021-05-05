@@ -36,7 +36,7 @@ class LocationsViewController: UITableViewController {
         _ tableView: UITableView,
         numberOfRowsInSection section: Int
     ) -> Int {
-        return 1
+        return locations.count
     }
     
     override func tableView(
@@ -47,12 +47,27 @@ class LocationsViewController: UITableViewController {
             withIdentifier: "LocationCell",
             for: indexPath)
         
+        let location = locations[indexPath.row]
+        
         let descriptionLabel = cell.viewWithTag(100) as! UILabel
-        descriptionLabel.text = "If you can see this"
+        descriptionLabel.text = location.locationDescription
         
         let addressLabel = cell.viewWithTag(101) as! UILabel
-        addressLabel.text = "Then it works!"
-        
+        if let placemark = location.placemark {
+            var text = ""
+            if let tmp = placemark.subThoroughfare {
+                text += tmp + " "
+            }
+            if let tmp = placemark.thoroughfare {
+                text += tmp + ", "
+            }
+            if let tmp = placemark.locality {
+                text += tmp
+            }
+            addressLabel.text = text
+        } else {
+            addressLabel.text = ""
+        }
         return cell
     }
 }
