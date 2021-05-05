@@ -385,7 +385,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LocationCell" rowHeight="65" id="h08-Yr-YE0">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LocationCell" rowHeight="65" id="h08-Yr-YE0" customClass="LocationCell" customModule="MyLocations" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="24.5" width="375" height="65"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="h08-Yr-YE0" id="PRN-dU-hKz">
@@ -416,6 +416,10 @@
                                         <constraint firstItem="ac6-Fx-mEu" firstAttribute="top" secondItem="PRN-dU-hKz" secondAttribute="topMargin" id="lhG-Gq-CFZ"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="addressLabel" destination="ioa-Z1-bWa" id="IBJ-hO-z2Z"/>
+                                    <outlet property="descriptionLabel" destination="ac6-Fx-mEu" id="Ifj-4w-AcH"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
