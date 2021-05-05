@@ -12,23 +12,34 @@ import CoreLocation
 
 class LocationsViewController: UITableViewController {
     var managedObjectContext: NSManagedObjectContext!
-    var locations = [Location]()
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
+    lazy var fetchedResultsController: NSFetchedResultsController<Location> = {
         let fetchRequest = NSFetchRequest<Location>()
+        
         let entity = Location.entity()
         fetchRequest.entity = entity
         
         let sortDescriptor = NSSortDescriptor(key: "date", ascending: true)
         fetchRequest.sortDescriptors = [sortDescriptor]
         
-        do {
-            locations = try managedObjectContext.fetch(fetchRequest)
-        } catch {
-            fatalCoreDataError(error)
-        }
+        fetchRequest.fetchBatchSize = 20
+        
+        let fetchedResultsController = NSFetchedResultsController(
+            fetchRequest: fetchRequest,
+            managedObjectContext: self.managedObjectContext,
+            sectionNameKeyPath: nil,
+            cacheName: "Locations")
+        
+        fetchedResultsController.delegate = self
+        return fetchedResultsController
+    }()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        performFetch()
+    }
+    
+    deinit {
+        fetchedResultsController.delegate = nil
     }
     
     // MARK: - Navigation
@@ -38,7 +49,7 @@ class LocationsViewController: UITableViewController {
             controller.managedObjectContext = managedObjectContext
             
             if let indexPath = tableView.indexPath(for: sender as! UITableViewCell) {
-                let location = locations[indexPath.row]
+                let location = fetchedResultsController.object(at: indexPath)
                 controller.locationToEdit = location
             }
         }
@@ -49,7 +60,8 @@ class LocationsViewController: UITableViewController {
         _ tableView: UITableView,
         numberOfRowsInSection section: Int
     ) -> Int {
-        return locations.count
+        let sectionInfo = fetchedResultsController.sections![section]
+        return sectionInfo.numberOfObjects
     }
     
     override func tableView(
