@@ -22,6 +22,7 @@
 		B9943F3626231B4900218127 /* MyLocations.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B9943F3426231B4900218127 /* MyLocations.xcdatamodeld */; };
 		B9943F3826231B4A00218127 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9943F3726231B4A00218127 /* Assets.xcassets */; };
 		B9943F3B26231B4A00218127 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9943F3926231B4A00218127 /* LaunchScreen.storyboard */; };
+		B9BFB3DE2645F6D9005B5E82 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BFB3DD2645F6D9005B5E82 /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		B9943F3726231B4A00218127 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B9943F3A26231B4A00218127 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B9943F3C26231B4A00218127 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B9BFB3DD2645F6D9005B5E82 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				B9943F2F26231B4900218127 /* CurrentLocationViewController.swift */,
 				B90C0A512638A03E00D4A93A /* LocationDetailsViewController.swift */,
 				B98460842639FA6900BE0BFF /* CategoryPickerViewController.swift */,
+				B9BFB3DD2645F6D9005B5E82 /* MapViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -194,6 +197,7 @@
 				B9846089263A42E300BE0BFF /* Functions.swift in Sources */,
 				B983D76E26420F1100585D21 /* LocationsViewController.swift in Sources */,
 				B91B37C8263E245400E6E114 /* Location+CoreDataProperties.swift in Sources */,
+				B9BFB3DE2645F6D9005B5E82 /* MapViewController.swift in Sources */,
 				B983D77026421D9B00585D21 /* LocationCell.swift in Sources */,
 				B9943F3626231B4900218127 /* MyLocations.xcdatamodeld in Sources */,
 				B9943F2E26231B4900218127 /* SceneDelegate.swift in Sources */,
