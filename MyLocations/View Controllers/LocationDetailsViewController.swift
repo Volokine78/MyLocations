@@ -39,7 +39,7 @@ class LocationDetailsViewController: UITableViewController {
             }
         }
     }
-    
+    var image: UIImage?
     
     @IBOutlet var descriptionTextView: UITextView!
     @IBOutlet var categoryLabel: UILabel!
@@ -146,6 +146,12 @@ class LocationDetailsViewController: UITableViewController {
             return
         }
         descriptionTextView.resignFirstResponder()
+    }
+    
+    func show(image: UIImage) {
+        imageView.image = image
+        imageView.isHidden = false
+        addPhotoLabel.text = ""
     }
     
     // MARK: - Actions
