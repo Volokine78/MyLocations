@@ -130,7 +130,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V7T-JU-arf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="454" y="94"/>
+            <point key="canvasLocation" x="426" y="777"/>
         </scene>
         <!--Tag-->
         <scene sceneID="1ds-6R-Rtz">
@@ -433,7 +433,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eug-ZT-UIF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3254" y="778"/>
+            <point key="canvasLocation" x="1854" y="778"/>
         </scene>
         <!--Map-->
         <scene sceneID="BJ4-qg-B6C">
@@ -473,11 +473,12 @@
                     </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="XXf-nW-iBd" id="rSa-Do-Su3"/>
+                        <segue destination="CZG-gz-koR" kind="show" identifier="EditLocation" id="hH2-9N-bGw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rEq-aZ-GiH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1854" y="778"/>
+            <point key="canvasLocation" x="1854" y="1468"/>
         </scene>
         <!--Locations-->
         <scene sceneID="pWT-Eb-CWJ">
@@ -494,7 +495,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lVI-tp-2Mu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2548" y="777"/>
+            <point key="canvasLocation" x="1148" y="777"/>
         </scene>
         <!--Category Picker View Controller-->
         <scene sceneID="oOg-g6-nYp">
@@ -555,11 +556,11 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ber-l0-KO4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1148" y="777"/>
+            <point key="canvasLocation" x="1148" y="1467"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Ptx-YF-BIR"/>
+        <segue reference="hH2-9N-bGw"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="labelColor">
