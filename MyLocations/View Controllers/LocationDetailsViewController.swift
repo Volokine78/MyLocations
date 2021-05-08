@@ -231,14 +231,16 @@ extension LocationDetailsViewController:
         
         let actPhoto = UIAlertAction(
             title: "Take Photo",
-            style: .default,
-            handler: nil)
+            style: .default) { _ in
+            self.takePhotoWithCamera()
+        }
         alert.addAction(actPhoto)
         
         let actLibrary = UIAlertAction(
             title: "Choose From Library",
-            style: .default,
-            handler: nil)
+            style: .default) { _ in
+            self.choosePhotoFromLibrary()
+        }
         alert.addAction(actLibrary)
         
         present(alert, animated: true, completion: nil)
