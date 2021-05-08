@@ -19,6 +19,10 @@ class MapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateLocations()
+        
+        if !locations.isEmpty {
+            showLocations()
+        }
     }
     
     // MARK: - Actions
@@ -31,6 +35,8 @@ class MapViewController: UIViewController {
     }
     
     @IBAction func showLocations() {
+        let theRegion = region(for: locations)
+        mapView.setRegion(theRegion, animated: true)
     }
     
     // MARK: - Helper Methods
