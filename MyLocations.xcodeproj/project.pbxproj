@@ -70,10 +70,10 @@
 		B91B37CB263E291D00E6E114 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				B983D76D26420F1100585D21 /* LocationsViewController.swift */,
 				B9943F2F26231B4900218127 /* CurrentLocationViewController.swift */,
 				B90C0A512638A03E00D4A93A /* LocationDetailsViewController.swift */,
 				B98460842639FA6900BE0BFF /* CategoryPickerViewController.swift */,
+				B983D76D26420F1100585D21 /* LocationsViewController.swift */,
 				B9BFB3DD2645F6D9005B5E82 /* MapViewController.swift */,
 			);
 			path = "View Controllers";
