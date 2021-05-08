@@ -210,7 +210,7 @@ extension LocationDetailsViewController:
     }
     
     func pickPhoto() {
-        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+        if true || UIImagePickerController.isSourceTypeAvailable(.camera) {
             showPhotoMenu()
         } else {
             choosePhotoFromLibrary()
