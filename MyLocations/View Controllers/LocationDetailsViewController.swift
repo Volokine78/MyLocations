@@ -209,6 +209,41 @@ extension LocationDetailsViewController:
         present(imagePicker, animated: true, completion: nil)
     }
     
+    func pickPhoto() {
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            showPhotoMenu()
+        } else {
+            choosePhotoFromLibrary()
+        }
+    }
+    
+    func showPhotoMenu() {
+        let alert = UIAlertController(
+            title: nil,
+            message: nil,
+            preferredStyle: .actionSheet)
+        
+        let actCancel = UIAlertAction(
+            title: "Cancel",
+            style: .cancel,
+            handler: nil)
+        alert.addAction(actCancel)
+        
+        let actPhoto = UIAlertAction(
+            title: "Take Photo",
+            style: .default,
+            handler: nil)
+        alert.addAction(actPhoto)
+        
+        let actLibrary = UIAlertAction(
+            title: "Choose From Library",
+            style: .default,
+            handler: nil)
+        alert.addAction(actLibrary)
+        
+        present(alert, animated: true, completion: nil)
+    }
+    
     // MARK: - Image Picker Delegates
     func imagePickerController(
         _ picker: UIImagePickerController,
