@@ -47,6 +47,8 @@ class LocationDetailsViewController: UITableViewController {
     @IBOutlet var longitudeLabel: UILabel!
     @IBOutlet var addressLabel: UILabel!
     @IBOutlet var dateLabel: UILabel!
+    @IBOutlet var imageView: UIImageView!
+    @IBOutlet var addPhotoLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
