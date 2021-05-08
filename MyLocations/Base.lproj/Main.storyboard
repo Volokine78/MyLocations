@@ -229,9 +229,16 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="D7a-4B-Qqd">
+                                                    <rect key="frame" x="157" y="0.0" width="192" height="44"/>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="D7a-4B-Qqd" firstAttribute="top" secondItem="P6s-XW-syj" secondAttribute="top" id="GBk-2W-xkn"/>
+                                                <constraint firstAttribute="trailing" secondItem="D7a-4B-Qqd" secondAttribute="trailing" constant="0.5" id="QMZ-v6-4Vj"/>
                                                 <constraint firstItem="9cP-Dm-qQT" firstAttribute="bottom" secondItem="P6s-XW-syj" secondAttribute="bottomMargin" id="Wj4-S2-KGx"/>
+                                                <constraint firstAttribute="bottom" secondItem="D7a-4B-Qqd" secondAttribute="bottom" id="eU5-tl-cjr"/>
+                                                <constraint firstItem="D7a-4B-Qqd" firstAttribute="leading" secondItem="9cP-Dm-qQT" secondAttribute="trailing" constant="61" id="ilM-cg-3bm"/>
                                                 <constraint firstItem="9cP-Dm-qQT" firstAttribute="centerY" secondItem="P6s-XW-syj" secondAttribute="centerY" id="jfH-Dm-udY"/>
                                                 <constraint firstItem="9cP-Dm-qQT" firstAttribute="leading" secondItem="P6s-XW-syj" secondAttribute="leadingMargin" id="xPv-eh-VeQ"/>
                                             </constraints>
@@ -365,17 +372,19 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="addPhotoLabel" destination="9cP-Dm-qQT" id="sEF-31-Lc4"/>
                         <outlet property="addressLabel" destination="Nlw-bY-MUr" id="oUZ-dq-7jh"/>
                         <outlet property="categoryLabel" destination="veL-GS-2tD" id="v93-eY-W44"/>
                         <outlet property="dateLabel" destination="h0T-v3-Wf6" id="f3N-1g-Maj"/>
                         <outlet property="descriptionTextView" destination="qWV-s7-Wm8" id="PJ4-qF-bAa"/>
+                        <outlet property="imageView" destination="D7a-4B-Qqd" id="nFD-wX-Cza"/>
                         <outlet property="latitudeLabel" destination="LbC-hD-vjf" id="p9x-Yu-972"/>
                         <outlet property="longitudeLabel" destination="XMN-QU-OEA" id="4mB-jK-YbC"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fiw-6T-SMf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2558" y="94"/>
+            <point key="canvasLocation" x="2557.5999999999999" y="93.103448275862078"/>
         </scene>
         <!--Locations-->
         <scene sceneID="OYe-AM-kMA">
