@@ -11,6 +11,7 @@ class LocationCell: UITableViewCell {
     
     @IBOutlet var descriptionLabel: UILabel!
     @IBOutlet var addressLabel: UILabel!
+    @IBOutlet var photoImageView: UIImageView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
