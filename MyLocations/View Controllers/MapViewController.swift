@@ -24,11 +24,11 @@ class MapViewController: UIViewController {
                 if self.isViewLoaded {
                     self.updateLocations()
                 }
-                if let dictionary = notification.userInfo {
-                    print(dictionary[NSInsertedObjectsKey]!)
-                    print(dictionary[NSUpdatedObjectsKey]!)
-                    print(dictionary[NSDeletedObjectsKey]!)
-                }
+//                if let dictionary = notification.userInfo {
+//                    print(dictionary[NSInsertedObjectsKey]!)
+//                    print(dictionary[NSUpdatedObjectsKey]!)
+//                    print(dictionary[NSDeletedObjectsKey]!)
+//                }
             }
         }
     }
