@@ -41,4 +41,11 @@ public class Location: NSManagedObject, MKAnnotation {
     var photoImage: UIImage? {
         return UIImage(contentsOfFile: photoURL.path)
     }
+    
+    class func nextPhotoID() -> Int {
+        let userDefaults = UserDefaults.standard
+        let currentID = userDefaults.integer(forKey: "PhotoID") + 1
+        userDefaults.set(currentID, forKey: "PhotoID")
+        return currentID
+    }
 }
