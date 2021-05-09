@@ -26,6 +26,7 @@ class LocationDetailsViewController: UITableViewController {
     var managedObjectContext: NSManagedObjectContext!
     var date = Date()
     var descriptionText = ""
+    var image: UIImage?
     var locationToEdit: Location? {
         didSet {
             if let location = locationToEdit {
@@ -39,15 +40,6 @@ class LocationDetailsViewController: UITableViewController {
             }
         }
     }
-    var image: UIImage? {
-        didSet {
-            if let image = image {
-                imageView.image = image
-                imageView.isHidden = false
-                addPhotoLabel.text = ""
-            }
-        }
-    }
     
     @IBOutlet var descriptionTextView: UITextView!
     @IBOutlet var categoryLabel: UILabel!
@@ -57,6 +49,7 @@ class LocationDetailsViewController: UITableViewController {
     @IBOutlet var dateLabel: UILabel!
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var addPhotoLabel: UILabel!
+    @IBOutlet var imageHeight: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -257,12 +250,23 @@ extension LocationDetailsViewController:
         present(alert, animated: true, completion: nil)
     }
     
+    func show(image: UIImage) {
+        imageView.image = image
+        imageView.isHidden = false
+        addPhotoLabel.text = ""
+        imageHeight.constant = 260
+        tableView.reloadData()
+    }
+    
     // MARK: - Image Picker Delegates
     func imagePickerController(
         _ picker: UIImagePickerController,
         didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]
     ) {
         image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage
+        if let theImage = image {
+            show(image: theImage)
+        }
         dismiss(animated: true, completion: nil)
     }
     
