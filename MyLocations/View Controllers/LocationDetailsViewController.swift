@@ -67,8 +67,13 @@ class LocationDetailsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if locationToEdit != nil {
+        if let location = locationToEdit {
             title = "Edit Location"
+            if location.hasPhoto {
+                if let image = location.photoImage {
+                    self.image = image
+                }
+            }
         }
         
         descriptionTextView.text = descriptionText
