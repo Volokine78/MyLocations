@@ -26,7 +26,7 @@ class LocationDetailsViewController: UITableViewController {
     var managedObjectContext: NSManagedObjectContext!
     var date = Date()
     var descriptionText = ""
-    var image: UIImage?
+    
     var locationToEdit: Location? {
         didSet {
             if let location = locationToEdit {
@@ -37,6 +37,18 @@ class LocationDetailsViewController: UITableViewController {
                     location.latitude,
                     location.longitude)
                 placemark = location.placemark
+            }
+        }
+    }
+    
+    var image: UIImage? {
+        didSet {
+            if let image = image {
+                imageView.image = image
+                imageView.isHidden = false
+                addPhotoLabel.text = ""
+                imageHeight.constant = 260
+                tableView.reloadData()
             }
         }
     }
@@ -250,23 +262,12 @@ extension LocationDetailsViewController:
         present(alert, animated: true, completion: nil)
     }
     
-    func show(image: UIImage) {
-        imageView.image = image
-        imageView.isHidden = false
-        addPhotoLabel.text = ""
-        imageHeight.constant = 260
-        tableView.reloadData()
-    }
-    
     // MARK: - Image Picker Delegates
     func imagePickerController(
         _ picker: UIImagePickerController,
         didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]
     ) {
         image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage
-        if let theImage = image {
-            show(image: theImage)
-        }
         dismiss(animated: true, completion: nil)
     }
     
