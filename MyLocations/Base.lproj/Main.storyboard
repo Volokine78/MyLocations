@@ -407,32 +407,42 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ac6-Fx-mEu">
-                                            <rect key="frame" x="16" y="11" width="95" height="21"/>
+                                            <rect key="frame" x="76" y="11" width="95" height="21"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ioa-Z1-bWa" userLabel="Address">
-                                            <rect key="frame" x="16" y="40" width="53" height="17"/>
+                                            <rect key="frame" x="76" y="40" width="53" height="17"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OpS-2P-oXo">
+                                            <rect key="frame" x="16" y="6" width="52" height="52"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="52" id="7Cc-NX-AEq"/>
+                                                <constraint firstAttribute="width" constant="52" id="8Dq-hZ-MWc"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="ac6-Fx-mEu" firstAttribute="leading" secondItem="OpS-2P-oXo" secondAttribute="trailing" constant="8" symbolic="YES" id="7wT-p9-8Y2"/>
                                         <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="ac6-Fx-mEu" secondAttribute="trailing" id="8zn-fL-wbf"/>
                                         <constraint firstAttribute="bottom" secondItem="ioa-Z1-bWa" secondAttribute="bottom" constant="8" id="9b1-eM-zbE"/>
-                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ioa-Z1-bWa" secondAttribute="trailing" symbolic="YES" id="Cby-dK-Gwx"/>
+                                        <constraint firstItem="OpS-2P-oXo" firstAttribute="leading" secondItem="PRN-dU-hKz" secondAttribute="leading" constant="16" id="Bw5-1g-a6S"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ioa-Z1-bWa" secondAttribute="trailing" constant="20" symbolic="YES" id="Cby-dK-Gwx"/>
                                         <constraint firstItem="ioa-Z1-bWa" firstAttribute="top" secondItem="ac6-Fx-mEu" secondAttribute="bottom" constant="8" symbolic="YES" id="GZP-S2-s1f"/>
-                                        <constraint firstItem="ac6-Fx-mEu" firstAttribute="leading" secondItem="PRN-dU-hKz" secondAttribute="leadingMargin" id="S0c-9d-Ov5"/>
-                                        <constraint firstItem="ioa-Z1-bWa" firstAttribute="leading" secondItem="PRN-dU-hKz" secondAttribute="leading" constant="16" id="WlV-mQ-lEo"/>
+                                        <constraint firstItem="OpS-2P-oXo" firstAttribute="top" secondItem="PRN-dU-hKz" secondAttribute="top" constant="6" id="h2m-uT-uas"/>
                                         <constraint firstItem="ioa-Z1-bWa" firstAttribute="top" secondItem="ac6-Fx-mEu" secondAttribute="bottom" constant="8" symbolic="YES" id="hHQ-nP-l8c"/>
                                         <constraint firstItem="ac6-Fx-mEu" firstAttribute="top" secondItem="PRN-dU-hKz" secondAttribute="topMargin" id="lhG-Gq-CFZ"/>
+                                        <constraint firstItem="ioa-Z1-bWa" firstAttribute="leading" secondItem="OpS-2P-oXo" secondAttribute="trailing" constant="8" symbolic="YES" id="zgO-Tc-Quc"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="addressLabel" destination="ioa-Z1-bWa" id="IBJ-hO-z2Z"/>
                                     <outlet property="descriptionLabel" destination="ac6-Fx-mEu" id="Ifj-4w-AcH"/>
+                                    <outlet property="photoImageView" destination="OpS-2P-oXo" id="VsJ-cW-EGz"/>
                                     <segue destination="CZG-gz-koR" kind="show" identifier="EditLocation" id="Ptx-YF-BIR"/>
                                 </connections>
                             </tableViewCell>
@@ -573,7 +583,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="hH2-9N-bGw"/>
+        <segue reference="Ptx-YF-BIR"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="labelColor">
