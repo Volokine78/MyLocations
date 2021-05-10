@@ -8,7 +8,7 @@
 import Foundation
 
 extension String {
-    mutating func add(text: String?, seperatedBy seperator: String) {
+    mutating func add(text: String?, seperatedBy seperator: String = "") {
         if let text = text {
             if !isEmpty {
                 self += seperator
