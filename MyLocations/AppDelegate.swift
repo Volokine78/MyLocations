@@ -39,5 +39,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             blue: 136 / 255.0,
             alpha: 1.0)
         UITabBar.appearance().tintColor = tintColor
+    }
 }
 
