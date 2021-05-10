@@ -69,6 +69,10 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
             locationManager.requestWhenInUseAuthorization()
         }
         
+        if logoVisible {
+            hideLogoView()
+        }
+        
         if updatingLocation {
             stopLocationManager()
         } else {
@@ -294,6 +298,12 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
             containerView.isHidden = true
             view.addSubview(logoButton)
         }
+    }
+    
+    func hideLogoView() {
+        logoVisible = false
+        containerView.isHidden = false
+        logoButton.removeFromSuperview()
     }
 }
 
