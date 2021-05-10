@@ -136,7 +136,7 @@
         <scene sceneID="1ds-6R-Rtz">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cdf-e6-TpG" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Tag" id="GKP-pA-2BO"/>
+                    <tabBarItem key="tabBarItem" title="Tag" image="Tag" id="GKP-pA-2BO"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Aoy-y5-ywc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -507,7 +507,7 @@
         <scene sceneID="pWT-Eb-CWJ">
             <objects>
                 <navigationController id="M21-9c-hPJ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Locations" id="Uht-AP-5Tk"/>
+                    <tabBarItem key="tabBarItem" title="Locations" image="Locations" id="Uht-AP-5Tk"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Pa7-yl-iXr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -566,7 +566,7 @@
         <scene sceneID="raI-eS-Ze7">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mWq-mR-tOA" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Map" id="a9M-hU-bzO"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="Map" id="a9M-hU-bzO"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="3qM-pv-CJ4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -586,6 +586,9 @@
         <segue reference="fuT-5K-NNM"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="Locations" width="30" height="30"/>
+        <image name="Map" width="30" height="30"/>
+        <image name="Tag" width="30" height="30"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
