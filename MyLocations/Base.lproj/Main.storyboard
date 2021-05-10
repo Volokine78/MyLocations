@@ -122,6 +122,7 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="addressLabel" destination="0HV-Ru-yGr" id="hm3-uP-Niw"/>
+                        <outlet property="containerView" destination="ns6-ci-CSb" id="ooB-gY-ScP"/>
                         <outlet property="getButton" destination="xlH-1s-RHE" id="u2z-4C-TOt"/>
                         <outlet property="latitudeLabel" destination="tGL-yU-j0U" id="DnG-Yb-XMt"/>
                         <outlet property="latitudeTextLabel" destination="h9w-Xe-dRV" id="U78-jY-Pmc"/>

@@ -45,6 +45,7 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
     @IBOutlet var getButton: UIButton!
     @IBOutlet var latitudeTextLabel: UILabel!
     @IBOutlet var longitudeTextLabel: UILabel!
+    @IBOutlet var containerView: UIView!
     
     // MARK: - Actions
     @IBAction func getLocation() {
