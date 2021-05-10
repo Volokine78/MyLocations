@@ -138,26 +138,14 @@ class LocationDetailsViewController: UITableViewController {
     
     // MARK: - Helper Methods
     func string(from placemark: CLPlacemark) -> String {
-        var text = ""
-        if let tmp = placemark.subThoroughfare {
-            text +=  tmp + " "
-        }
-        if let tmp = placemark.thoroughfare {
-            text += tmp + ", "
-        }
-        if let tmp = placemark.locality {
-            text += tmp + ", "
-        }
-        if let tmp = placemark.administrativeArea {
-            text += tmp + ", "
-        }
-        if let tmp = placemark.postalCode {
-            text += tmp + ", "
-        }
-        if let tmp = placemark.country {
-            text += tmp
-        }
-        return text
+        var line = ""
+        line.add(text: placemark.subThoroughfare)
+        line.add(text: placemark.thoroughfare, seperatedBy: " ")
+        line.add(text: placemark.locality, seperatedBy: ", ")
+        line.add(text: placemark.administrativeArea, seperatedBy: ", ")
+        line.add(text: placemark.postalCode, seperatedBy: " ")
+        line.add(text: placemark.country, seperatedBy: ", ")
+        return line
     }
     
     func format(date: Date) -> String {
