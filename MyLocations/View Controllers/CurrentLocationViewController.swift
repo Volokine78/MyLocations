@@ -183,6 +183,27 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
         logoButton.removeFromSuperview()
     }
     
+    // MARK: - Sound Effects
+    func loadSoundEffect(_ name: String) {
+        if let path = Bundle.main.path(forResource: name, ofType: nil) {
+            let fileURL = URL(fileURLWithPath: path, isDirectory: false)
+            let error = AudioServicesCreateSystemSoundID(
+                fileURL as CFURL, &soundID)
+            if error != kAudioServicesNoError {
+                print("Error code \(error) loading sound: \(path)")
+            }
+        }
+    }
+    
+    func unloadSoundEffect() {
+        AudioServicesDisposeSystemSoundID(soundID)
+        soundID = 0
+    }
+    
+    func playSoundEffect() {
+        AudioServicesPlaySystemSound(soundID)
+    }
+    
     // MARK: - Helper Methods
     func showLocationServicesDeniedAlert() {
         let alert = UIAlertController(
