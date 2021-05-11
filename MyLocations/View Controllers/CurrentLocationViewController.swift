@@ -8,6 +8,7 @@
 import UIKit
 import CoreLocation
 import CoreData
+import AudioToolbox
 
 class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate,
                                      CAAnimationDelegate {
@@ -23,6 +24,7 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
     var timer: Timer?
     var managedObjectContext: NSManagedObjectContext!
     var logoVisible = false
+    var soundID: SystemSoundID = 0
     
     lazy var logoButton: UIButton = {
         let button = UIButton(type: .custom)
