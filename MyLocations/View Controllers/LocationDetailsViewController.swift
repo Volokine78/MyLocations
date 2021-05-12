@@ -20,17 +20,30 @@ private let dateFormatter: DateFormatter = {
 
 class LocationDetailsViewController: UITableViewController {
     
+    @IBOutlet var descriptionTextView: UITextView!
+    @IBOutlet var titleTextField: UITextField!
+    @IBOutlet var categoryLabel: UILabel!
+    @IBOutlet var latitudeLabel: UILabel!
+    @IBOutlet var longitudeLabel: UILabel!
+    @IBOutlet var addressLabel: UILabel!
+    @IBOutlet var dateLabel: UILabel!
+    @IBOutlet var imageView: UIImageView!
+    @IBOutlet var addPhotoLabel: UILabel!
+    @IBOutlet var imageHeight: NSLayoutConstraint!
+    
     var coordinate = CLLocationCoordinate2D(latitude: 0, longitude: 0)
     var placemark: CLPlacemark?
     var categoryName = "No Category"
     var managedObjectContext: NSManagedObjectContext!
     var date = Date()
     var descriptionText = ""
+    var titleText = ""
     var observer: Any!
     
     var locationToEdit: Location? {
         didSet {
             if let location = locationToEdit {
+                titleText = location.locationTitle
                 descriptionText = location.locationDescription
                 categoryName = location.category
                 date = location.date
@@ -54,21 +67,15 @@ class LocationDetailsViewController: UITableViewController {
         }
     }
     
-    @IBOutlet var descriptionTextView: UITextView!
-    @IBOutlet var categoryLabel: UILabel!
-    @IBOutlet var latitudeLabel: UILabel!
-    @IBOutlet var longitudeLabel: UILabel!
-    @IBOutlet var addressLabel: UILabel!
-    @IBOutlet var dateLabel: UILabel!
-    @IBOutlet var imageView: UIImageView!
-    @IBOutlet var addPhotoLabel: UILabel!
-    @IBOutlet var imageHeight: NSLayoutConstraint!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         if let location = locationToEdit {
-            title = "Edit Location"
+            if titleText == "" {
+                title = "Edit Location"
+            } else {
+                title = titleText
+            }
             if location.hasPhoto {
                 if let image = location.photoImage {
                     self.image = image
@@ -76,6 +83,7 @@ class LocationDetailsViewController: UITableViewController {
             }
         }
         
+        titleTextField.text = titleText
         descriptionTextView.text = descriptionText
         categoryLabel.text = categoryName
         
@@ -192,6 +200,7 @@ class LocationDetailsViewController: UITableViewController {
             location.photoID = nil
         }
         
+        location.locationTitle = titleTextField.text ?? ""
         location.locationDescription = descriptionTextView.text
         location.category = categoryName
         location.latitude = coordinate.latitude
