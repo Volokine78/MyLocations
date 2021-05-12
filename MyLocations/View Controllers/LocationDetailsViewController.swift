@@ -125,7 +125,7 @@ class LocationDetailsViewController: UITableViewController {
         _ tableView: UITableView,
         willSelectRowAt indexPath: IndexPath
     ) -> IndexPath? {
-        if indexPath.section == 0 || indexPath.section == 1 {
+        if indexPath.section == 0 || indexPath.section == 1 || indexPath.section == 2 {
             return indexPath
         } else {
             return nil
@@ -137,8 +137,10 @@ class LocationDetailsViewController: UITableViewController {
         didSelectRowAt indexPath: IndexPath
     ) {
         if indexPath.section == 0 && indexPath.row == 0 {
-            descriptionTextView.becomeFirstResponder()
+            titleTextField.becomeFirstResponder()
         } else if indexPath.section == 1 && indexPath.row == 0 {
+            descriptionTextView.becomeFirstResponder()
+        } else if indexPath.section == 2 && indexPath.row == 0 {
             tableView.deselectRow(at: indexPath, animated: true)
             pickPhoto()
         }
@@ -164,9 +166,10 @@ class LocationDetailsViewController: UITableViewController {
         let point = gestureRecognizer.location(in: tableView)
         let indexPath = tableView.indexPathForRow(at: point)
         
-        if indexPath != nil && indexPath!.section == 0 && indexPath!.row == 0 {
-            return
+        if indexPath != nil && indexPath!.section == 0 && indexPath!.section == 1 && indexPath!.row == 0  {
+          return
         }
+        titleTextField.resignFirstResponder()
         descriptionTextView.resignFirstResponder()
     }
     
