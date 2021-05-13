@@ -105,6 +105,8 @@ class LocationDetailsViewController: UITableViewController {
         tableView.addGestureRecognizer(gestureRecognizer)
         
         listenForBackgroundNotification()
+        
+        titleTextField.delegate = self
     }
     
     deinit {
@@ -182,6 +184,7 @@ class LocationDetailsViewController: UITableViewController {
                 if weakSelf.presentedViewController != nil {
                     weakSelf.dismiss(animated: false, completion: nil)
                 }
+                weakSelf.titleTextField.resignFirstResponder()
                 weakSelf.descriptionTextView.resignFirstResponder()
             }
         }
@@ -249,7 +252,7 @@ class LocationDetailsViewController: UITableViewController {
 }
 
 extension LocationDetailsViewController:
-    UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
     // MARK: - Image Helper Methods
     func takePhotoWithCamera() {
         let imagePicker = UIImagePickerController()
@@ -318,5 +321,18 @@ extension LocationDetailsViewController:
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    // MARK: - Text Field Delegates
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let currentText = textField.text ?? ""
+        guard let stringRange = Range(range, in: currentText) else { return false }
+        var titleText = currentText.replacingCharacters(in: stringRange, with: string)
+        if titleText.isEmpty {
+            titleText = "Edit Location"
+        }
+        self.navigationItem.title = titleText
+
+        return true
     }
 }
