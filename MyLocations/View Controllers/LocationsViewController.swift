@@ -38,6 +38,7 @@ class LocationsViewController: UITableViewController {
         super.viewDidLoad()
         performFetch()
         navigationItem.rightBarButtonItem = editButtonItem
+        tableView.separatorColor = UIColor.accentColor?.withAlphaComponent(0.6)
     }
     
     deinit {

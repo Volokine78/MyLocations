@@ -13,6 +13,16 @@ import AudioToolbox
 class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate,
                                      CAAnimationDelegate {
     
+    @IBOutlet var messageLabel: UILabel!
+    @IBOutlet var latitudeLabel: UILabel!
+    @IBOutlet var longtitudeLabel: UILabel!
+    @IBOutlet var addressLabel: UILabel!
+    @IBOutlet var tagButton: UIButton!
+    @IBOutlet var getButton: UIButton!
+    @IBOutlet var latitudeTextLabel: UILabel!
+    @IBOutlet var longitudeTextLabel: UILabel!
+    @IBOutlet var containerView: UIView!
+    
     let locationManager = CLLocationManager()
     var location: CLLocation?
     var updatingLocation = false
@@ -51,16 +61,6 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
         super.viewWillDisappear(animated)
         navigationController?.isNavigationBarHidden = false
     }
-    
-    @IBOutlet var messageLabel: UILabel!
-    @IBOutlet var latitudeLabel: UILabel!
-    @IBOutlet var longtitudeLabel: UILabel!
-    @IBOutlet var addressLabel: UILabel!
-    @IBOutlet var tagButton: UIButton!
-    @IBOutlet var getButton: UIButton!
-    @IBOutlet var latitudeTextLabel: UILabel!
-    @IBOutlet var longitudeTextLabel: UILabel!
-    @IBOutlet var containerView: UIView!
     
     // MARK: - Actions
     @IBAction func getLocation() {
@@ -368,6 +368,8 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
         panelMover.fillMode = CAMediaTimingFillMode.forwards
         panelMover.duration = 0.6
         panelMover.fromValue = NSValue(
+            cgPoint: containerView.center)
+        panelMover.toValue = NSValue(
             cgPoint: CGPoint(x: centerX, y: containerView.center.y))
         panelMover.timingFunction = CAMediaTimingFunction(
             name: CAMediaTimingFunctionName.easeOut)
@@ -383,7 +385,7 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
             cgPoint: CGPoint(x: -centerX, y: logoButton.center.y))
         logoMover.timingFunction = CAMediaTimingFunction(
             name: CAMediaTimingFunctionName.easeIn)
-        logoButton.layer.add(logoMover, forKey: "LogoMover")
+        logoButton.layer.add(logoMover, forKey: "logoMover")
         
         let logoRotator = CABasicAnimation(keyPath: "transform.rotation.z")
         logoRotator.isRemovedOnCompletion = false

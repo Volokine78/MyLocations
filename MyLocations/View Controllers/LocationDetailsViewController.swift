@@ -71,7 +71,7 @@ class LocationDetailsViewController: UITableViewController {
         super.viewDidLoad()
         
         if let location = locationToEdit {
-            if titleText == "" {
+            if titleText.isEmpty {
                 title = "Edit Location"
             } else {
                 title = titleText
@@ -302,6 +302,7 @@ extension LocationDetailsViewController:
             self.choosePhotoFromLibrary()
         }
         alert.addAction(actLibrary)
+        alert.view.tintColor = UIColor.accentColor
         
         present(alert, animated: true, completion: nil)
     }
